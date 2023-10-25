@@ -1,14 +1,14 @@
-# HOW TO EXECUTE CODE PERIODICALLY
+# How to Execute Code Periodically
 Two guides that explain how to execute generated code periodically on Windows&reg; or Linux&reg; 
 
-
+[![View how-to-execute-code-periodically on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/62289-how-to-execute-code-periodically)
 
 This package contains two guides that discuss how to build an application that runs _as a normal OS process_ and calls some (generated) code periodically. 
 In the first guide, you start form MATLAB&reg; code and use it to generate C code that you can call periodically within a simple executable.
 In the second guide you do the same, starting from a Simulink&reg; model.
 
 
-NOTES:
+Notes:
 ------------
 
 -) While in the guides the C code is generated, this is not strictly necessary. The guides do a decent job to discuss several ways to call such code periodically.
@@ -20,8 +20,8 @@ NOTES:
 -) In hindsight, I should have emphasized more that, among all the discussed methods, only timers can somewhat limit drift with respect to clock time. Perhaps i'll do that in a future version.
 
 
-CHEAT SHEET: USE TIMERS WITHOUT READING THE GUIDES:
----------------------------------------------------
+Cheat Sheet: Use timers without reading the guides
+--------------------------------------------------
 
 If you are in a hurry and want to implement something the right way (using timers) starting from an existing example, here's what you can do:
 Start from either the MATLAB or Simulink example, execute the example on your machine, then generate code, as shown in the "Generating Code" section of the guide, build the executable ad run it to make sure things are working as expected. 
@@ -29,17 +29,14 @@ The next step (e.g. for the MATLAB Code example under Windows) would be to delet
 That being said, again, reading the guide and proceeding step-by-step is suggested.
 
 
-CONTENTS (MAIN FOLDER):
----------------------------------------------
+Contents (main folder):
+-----------------------
 
 -) Readme.md                        This file, which i'm glad you are reading :)
-
 -) MLSoftRealTime.pdf               "MATLAB code to Soft Real Time" guide
 -) SLSoftRealTime.pdf               "Simulink model to Soft Real Time" guide
-
 -) algorithm.m                      Algorithm (an IIR Filter) in MALTAB
 -) algorithm_sl.slx                 Same algorithm in Simulink
-
 -) “myprint_sys.m                   Definition file of a System Object that prints its input
 -) myprint.cpp                      Init and Output C functions for Windows and Linux
 -) myprint.h                        Init and Output declarations for Windows and Linux
@@ -48,8 +45,8 @@ CONTENTS (MAIN FOLDER):
 -) security.md                      Security statement
 
 
-CONTENTS (ML_EXAMPLES FOLDER):
---------------------------------------------------------------
+Contents (ML_examples folder):
+------------------------------
 
 -) main_for_fixed_spacing.c         MATLAB to Windows, "Sleep"-only example, for loop
 -) main_for_fixed_rate.c            MATLAB to Windows, "Sleep" and "GetTickCount", for loop
@@ -59,8 +56,8 @@ CONTENTS (ML_EXAMPLES FOLDER):
 -) main_timer_linux.c               MATLAB to Linux the proper way (using an Interval Timer)
 
 
-CONTENTS (SL_EXAMPLES FOLDER):
---------------------------------------------------------------
+Contents (SL_examples folder):
+------------------------------
 -) ert_main_for_fixed_spacing.c     Simulink to Windows, "Sleep"-only example, for loop
 -) ert_main_for_fixed_rate.c        Simulink to Windows, "Sleep" and "GetTickCount", for loop
 -) ert_main_while_fixed_rate.c      Simulink to Windows, "Sleep" and "GetTickCount", while loop
@@ -68,8 +65,9 @@ CONTENTS (SL_EXAMPLES FOLDER):
 -) ert_main_timer.c                 Simulink to Windows the proper way (using a Queue Timer)
 -) ert_main_timer_linux.c           Simulink to Windows the proper way (using an Interval Timer)
 
-VERSIONS:
-------------------
+
+Versions:
+---------
 Version 1.1, 10-Mar-2017, Initial version.
 Version 1.3, 18-Mar-2017, Naming convention and MATLAB document heavily modified.
 Version 1.4, 25-Oct-2023, Uploaded on GitHub and Readme file modified.
